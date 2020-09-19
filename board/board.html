@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>샘플게시판</title>
+        <style> 
+            table, tr,td {
+                width: 800px;
+                border: 1px solid #000000;
+                border-collapse: collapse;
+            }
+        </style>
+        
+        <link rel='stylesheet' href='style.css'/>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>날짜</td>
+                <td>조회수</td>
+            </tr>
+            
+        </table>
+        <script src="https://code.jquery.com/jquery-2.2.4.js"  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="  crossorigin="anonymous"></script>
+        <script src="get_post_data.js"></script>
+        <script>
+            for (var i=0; i < temp.length; i++) {
+                $('tbody').append('<tr>');
+                $('tbody').append('<td>'+temp[i]['post_id']+'</td>')
+                $('tbody').append('<td>'+temp[i]['post_writer']+'</td>')
+                $('tbody').append('<td>'+temp[i]['post_content']+'</td>')
+                $('tbody').append('<td>'+temp[i]['post_create_at']+'</td>')
+                $('tbody').append('<td>'+temp[i]['post_view']+'</td>')
+                $('tbody').append('</tr>');
+            }
+        </script>
+    </body>
+</html>
+
